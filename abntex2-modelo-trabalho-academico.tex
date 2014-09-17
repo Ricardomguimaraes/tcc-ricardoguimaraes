@@ -18,7 +18,6 @@
 %% This work consists of the files abntex2-modelo-trabalho-academico.tex,
 %% abntex2-modelo-include-comandos and abntex2-modelo-references.bib
 %%
-
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 % abnTeX2: Modelo de Trabalho Academico (tese de doutorado, dissertacao de
@@ -26,6 +25,11 @@
 % ABNT NBR 14724:2011: Informacao e documentacao - Trabalhos academicos -
 % Apresentacao
 % ------------------------------------------------------------------------
+%Proposta de TCC para Matéria de ITCC. Prof. Carlor Mar.
+%Utilizado modelo do abntex2-modelo-trabalho-academico.tex adaptado para a necessidade desta proposta
+%pode-se fazer o download deste modelo pelo utilizando o endereço git clone https://github.com/Ricardomguimaraes/tcc-ricardoguimaraes.git.
+ 
+% Ricardo Moraes Guimaraes
 % ------------------------------------------------------------------------
 
 \documentclass[
@@ -35,8 +39,8 @@
 	twoside,			% para impressão em verso e anverso. Oposto a oneside
 	a4paper,			% tamanho do papel. 
 	% -- opções da classe abntex2 --
-	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
-	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	section=TITLE,		% títulos de seções convertidos em letras maiúsculas
 	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
 	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
 	% -- opções do pacote babel --
@@ -54,7 +58,7 @@
 \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
 \usepackage{lastpage}			% Usado pela Ficha catalográfica
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
-\usepackage{color}				% Controle das cores
+\usepackage{color}			% Controle das cores
 \usepackage{graphicx}			% Inclusão de gráficos
 \usepackage{microtype} 			% para melhorias de justificação
 % ---
@@ -95,19 +99,19 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Modelo Canônico de\\ Trabalho Acadêmico com \abnTeX}
-\autor{FUNDAÇÃO CENTRO DE ANÁLISE, PESQUISA E INOVAÇÃO TECNOLÓGICA FUCAPI\\ INSTITUTO DE ENSINO SUPERIOR FUCAPI\\ COORDENAÇÃO DE GRADUAÇÃO EM CIÊNCIA DA COMPUTAÇAO}
-\local{Brasil}
-\data{2014, v-1.9.2}
-\orientador{Lauro César Araujo}
-\coorientador{Equipe \abnTeX}
+\titulo{Otimização de Rotas na Geração de Pontos Turisticos}
+\autor{RICARDO MORAES GUIMARÃES}
+\local{Manaus}
+\data{2014, 19 de Setembro}
+\orientador{Renata da Encarnação Onety}
+\coorientador{Anderson Farias Briglia}
 \instituicao{%
-  Universidade do Brasil -- UBr
+  Fundação Centro de Análise, Pesquisa e Inovação Tecnológica -- FUCAPI
   \par
-  Faculdade de Arquitetura da Informação
+  Instituto de Ensino Superior Fucapi
   \par
-  Programa de Pós-Graduação}
-\tipotrabalho{Tese (Doutorado)}
+  Coordenação de Graduação em Ciência da Computação}
+\tipotrabalho{TCC (Monografia)}
 % O preambulo deve conter o tipo do trabalho, o objetivo, 
 % o nome da instituição e a área de concentração 
 \preambulo{Modelo canônico de trabalho monográfico acadêmico em conformidade com
@@ -172,7 +176,29 @@ as normas ABNT apresentado à comunidade de usuários \LaTeX.}
 % ---
 % Capa
 % ---
+\renewcommand{\imprimircapa}{%
+	\begin{capa}%
+		\center
+		\ABNTEXchapterfont\Large FUNDAÇÃO CENTRO DE ANÁLISE, PESQUISA E INOVAÇÃO TECNOLÓGICA\\ INSTITUTO DE ENSINO SUPERIOR FUCAPI\\ COORDENAÇÃO DE GRADUAÇÃO EM CIÊNCIA DA COMPUTAÇÃO
+	
+		\vspace*{1cm}
+	
+		{\ABNTEXchapterfont\large\imprimirautor}
+	
+		\vfill
+		\ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo
+		\vfill
+	
+		\large\imprimirlocal
+	
+		\large\imprimirdata
+	
+		\vspace*{1cm}
+	\end{capa}
+}
+
 \imprimircapa
+
 % ---
 
 % ---
@@ -463,8 +489,10 @@ contribuirão para a evolução do \abnTeX.
 % ----------------------------------------------------------
 % Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
 % ----------------------------------------------------------
-\chapter*[Introdução]{Introdução}
-\addcontentsline{toc}{chapter}{Introdução}
+%Introdução sem numeração, presente no sumario
+%\chapter*[Introdução]{Introdução}
+%\addcontentsline{toc}{chapter}{Introdução}
+\chapter{Introdução}
 % ----------------------------------------------------------
 As várias opções de cidades com potencial turistico elevado dentro do território brasileiro,
 torna a escolha do melhor percuso em uma determinada cidade entre "n" pontos turisticos,
@@ -487,124 +515,108 @@ demoninados (arestas).
 Pela perspectiva da otimização o PVC pertence a categoria conhecida como NP-Dificil, possuindo ordem de
 complexidade expônencial. Em outras palavras, o número de rotas cresce exponencialmente com o numero de cidades.
 
-Este documento e seu código-fonte são exemplos de referência de uso da classe
-\textsf{abntex2} e do pacote \textsf{abntex2cite}. O documento 
-exemplifica a elaboração de trabalho acadêmico (tese, dissertação e outros do
-gênero) produzido conforme a ABNT NBR 14724:2011 \emph{Informação e documentação
-- Trabalhos acadêmicos - Apresentação}.
-
-A expressão ``Modelo Canônico'' é utilizada para indicar que \abnTeX\ não é
-modelo específico de nenhuma universidade ou instituição, mas que implementa tão
-somente os requisitos das normas da ABNT. Uma lista completa das normas
-observadas pelo \abnTeX\ é apresentada em \citeonline{abntex2classe}.
-
-Sinta-se convidado a participar do projeto \abnTeX! Acesse o site do projeto em
-\url{http://abntex2.googlecode.com/}. Também fique livre para conhecer,
-estudar, alterar e redistribuir o trabalho do \abnTeX, desde que os arquivos
-modificados tenham seus nomes alterados e que os créditos sejam dados aos
-autores originais, nos termos da ``The \LaTeX\ Project Public
-License''\footnote{\url{http://www.latex-project.org/lppl.txt}}.
-
-Encorajamos que sejam realizadas customizações específicas deste exemplo para
-universidades e outras instituições --- como capas, folha de aprovação, etc.
-Porém, recomendamos que ao invés de se alterar diretamente os arquivos do
-\abnTeX, distribua-se arquivos com as respectivas customizações.
-Isso permite que futuras versões do \abnTeX~não se tornem automaticamente
-incompatíveis com as customizações promovidas. Consulte
-\citeonline{abntex2-wiki-como-customizar} par mais informações.
-
-Este documento deve ser utilizado como complemento dos manuais do \abnTeX\ 
-\cite{abntex2classe,abntex2cite,abntex2cite-alf} e da classe \textsf{memoir}
-\cite{memoir}. 
-
-Esperamos, sinceramente, que o \abnTeX\ aprimore a qualidade do trabalho que
-você produzirá, de modo que o principal esforço seja concentrado no principal:
-na contribuição científica.
-
-Equipe \abnTeX 
-
-Lauro César Araujo
+Com objetivo de encontrar o melhor caminho entre "n" pontos turisticos, considerando o horário de funcionamento como restrição na otimização do processo, este trabalho utilizará algoritmos Genéticos combinado com o algoritmo 2-opt que realiza um técnica de busca local para encontrar a melhor solução para o problema.
 
 
 % ----------------------------------------------------------
 % PARTE
 % ----------------------------------------------------------
-\part{Preparação da pesquisa}
+%\part{Preparação da pesquisa}
 % ----------------------------------------------------------
 
 % ---
 % Capitulo com exemplos de comandos inseridos de arquivo externo 
 % ---
-\include{abntex2-modelo-include-comandos}
+%\include{abntex2-modelo-include-comandos}
 % ---
 
 % ----------------------------------------------------------
 % PARTE
 % ----------------------------------------------------------
-\part{Referenciais teóricos}
+%\part{Referenciais teóricos}
 % ----------------------------------------------------------
 
 % ---
 % Capitulo de revisão de literatura
 % ---
-\chapter{Lorem ipsum dolor sit amet}
+\chapter{Justificativa}
 % ---
 
 % ---
-\section{Aliquam vestibulum fringilla lorem}
+\chapter{Objetivos}
 % ---
 
-\lipsum[1]
+% ---
+\section{Objetivos Geral}
+% ---
 
-\lipsum[2-3]
+% ---
+\section{Objetivo Específico}
+% ---
+%\lipsum[1]
+
+%\lipsum[2-3]
 
 % ----------------------------------------------------------
 % PARTE
 % ----------------------------------------------------------
-\part{Resultados}
+%\part{Resultados}
 % ----------------------------------------------------------
 
 % ---
 % primeiro capitulo de Resultados
 % ---
-\chapter{Lectus lobortis condimentum}
+\chapter{Fundamentação Teórica}
 % ---
 
 % ---
-\section{Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-posuere cubilia Curae}
+%\section{Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+%posuere cubilia Curae}
 % ---
 
-\lipsum[21-22]
+%\lipsum[21-22]
 
 % ---
 % segundo capitulo de Resultados
 % ---
-\chapter{Nam sed tellus sit amet lectus urna ullamcorper tristique interdum
-elementum}
+\chapter{Trabalhos Relacionados}
 % ---
 
 % ---
-\section{Pellentesque sit amet pede ac sem eleifend consectetuer}
+\chapter{Metodologia}
+% ---
+\chapter{Resultados Esperados}
+
+% ---
+\chapter{Cronograma}
 % ---
 
-\lipsum[24]
+% ---
+\chapter{Resultados Esperados}
+% ---
+
+% ---
+%\section{Pellentesque sit amet pede ac sem eleifend consectetuer}
+% ---
+
+%\lipsum[24]
 
 % ----------------------------------------------------------
 % Finaliza a parte no bookmark do PDF
 % para que se inicie o bookmark na raiz
 % e adiciona espaço de parte no Sumário
 % ----------------------------------------------------------
-\phantompart
+%\phantompart
 
 % ---
 % Conclusão (outro exemplo de capítulo sem numeração e presente no sumário)
 % ---
-\chapter*[Conclusão]{Conclusão}
-\addcontentsline{toc}{chapter}{Conclusão}
+%\chapter*[Conclusão]{Conclusão}
+%\addcontentsline{toc}{chapter}{Conclusão}
+%\chapter{Conlusão}
 % ---
 
-\lipsum[31-33]
+%\lipsum[31-33]
 
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
@@ -632,24 +644,24 @@ elementum}
 % ---
 % Inicia os apêndices
 % ---
-\begin{apendicesenv}
+%\begin{apendicesenv}
 
 % Imprime uma página indicando o início dos apêndices
-\partapendices
+%\partapendices
 
 % ----------------------------------------------------------
-\chapter{Quisque libero justo}
+%\chapter{Quisque libero justo}
 % ----------------------------------------------------------
 
-\lipsum[50]
+%\lipsum[50]
 
 % ----------------------------------------------------------
-\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
-ac pretium ante justo a nulla curabitur tristique arcu eu metus}
+%\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
+%ac pretium ante justo a nulla curabitur tristique arcu eu metus}
 % ----------------------------------------------------------
-\lipsum[55-57]
+%\lipsum[55-57]
 
-\end{apendicesenv}
+%\end{apendicesenv}
 % ---
 
 
@@ -660,36 +672,36 @@ ac pretium ante justo a nulla curabitur tristique arcu eu metus}
 % ---
 % Inicia os anexos
 % ---
-\begin{anexosenv}
+%\begin{anexosenv}
 
 % Imprime uma página indicando o início dos anexos
-\partanexos
+%\partanexos
 
 % ---
-\chapter{Morbi ultrices rutrum lorem.}
+%\chapter{Morbi ultrices rutrum lorem.}
 % ---
-\lipsum[30]
+%\lipsum[30]
 
 % ---
-\chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
-parturient montes nascetur ridiculus mus}
+%\chapter{Cras non urna sed feugiat cum sociis natoque penatibus et magnis dis
+%parturient montes nascetur ridiculus mus}
 % ---
 
-\lipsum[31]
+%\lipsum[31]
 
 % ---
-\chapter{Fusce facilisis lacinia dui}
+%\chapter{Fusce facilisis lacinia dui}
 % ---
 
-\lipsum[32]
+%\lipsum[32]
 
-\end{anexosenv}
+%\end{anexosenv}
 
 %---------------------------------------------------------------------
 % INDICE REMISSIVO
 %---------------------------------------------------------------------
-\phantompart
-\printindex
+%\phantompart
+%\printindex
 %---------------------------------------------------------------------
 
 \end{document}
